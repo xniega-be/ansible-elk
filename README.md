@@ -1,7 +1,7 @@
-Role Name
+Ansible-ELK
 =========
 
-A brief description of the role goes here.
+Ansible role to install ELK stack in Redhat 7 / CentOS 7 environments
 
 Requirements
 ------------

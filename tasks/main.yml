@@ -1,2 +1,12 @@
 ---
 # tasks file for ansible-elk
+
+- name: Install Java 8
+  include: java.yml
+
+- name: Install Elasticsearch
+  include: elasticsearch.yml
+
+- name: Install Kibana
+  include: kibana.yml
+  
