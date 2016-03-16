@@ -1,18 +1,6 @@
 ---
-- name: Check if java is already installed
-  command: rpm -q jdk1.8.0_73-1.8.0_73-fcs.x86_64
-  register: rpm_check
-  ignore_errors: True
 
-- name: Download Java 8
-  get_url: "url=http://download.oracle.com/otn-pub/java/jdk/8u73-b02/jdk-8u73-linux-x64.rpm  dest=/tmp/jdk-8u73-linux-x64.rpm  validate_certs=no headers='Cookie:gpw_e24=http%3A%2F%2Fwww.oracle.com%2F;oraclelicense=accept-securebackup-cookie'" 
-  when: rpm_check.stdout.find('is not installed') != -1
-
-- name: Install Java 8
-  yum: name=/tmp/jdk-8u73-linux-x64.rpm state=present
-  when: rpm_check.stdout.find('is not installed') != -1
-
-- name: Delete tmp Java installation file
-  file: path=/tmp/jdk-8u73-linux-x64.rpm state=absent
-  when: rpm_check.stdout.find('is not installed') != -1
+- name: Install OpenJDK
+  sudo: yes
+  yum: name=java-{{ java_version }}-openjdk state=present
 
