@@ -20,7 +20,7 @@
   when: elk_kibana.user is defined and elk_kibana.password is defined 
 
 - name: Copying nginx conf
-  copy: src=nginx.conf dest=/etc/nginx/nginx.conf
+  template: src=nginx.conf.j2 dest=/etc/nginx/nginx.conf
   notify: Restart Nginx
 
 - name: Copying Kibana conf
