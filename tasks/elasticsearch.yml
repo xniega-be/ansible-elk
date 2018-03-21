@@ -1,6 +1,6 @@
 ---
 - name: Import Elasticsearch public GPG key into rpm
-  rpm_key: state=present key=http://packages.elastic.co/GPG-KEY-elasticsearch
+  rpm_key: state=present key=http://artifacts.elastic.co/GPG-KEY-elasticsearch
 
 # Available in 2.1
 #- name: Creating yum repository for Elasticsearch

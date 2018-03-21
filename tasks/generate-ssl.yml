@@ -1,7 +1,7 @@
 ---
 
 - name: Adding private IP in openssl.cnf
-  lineinfile: 'dest=/etc/pki/tls/openssl.cnf regexp=subjectAltName line="subjectAltName = IP: {{ ansible_eth0["ipv4"]["address"] }}"'
+  lineinfile: 'dest=/etc/pki/tls/openssl.cnf regexp=subjectAltName line="subjectAltName = IP: {{ ansible_ens192["ipv4"]["address"] }}"'
 
 - name: Generating certificates
   shell:

@@ -8,6 +8,6 @@
   yum: name=kibana state=installed
 
 - name: Restrict hosts
-  lineinfile: 'dest=/opt/kibana/config/kibana.yml regexp=server.host line="server.host: localhost"'
+  lineinfile: 'dest=/etc/kibana/kibana.yml regexp=server.host line="server.host: localhost"'
   notify: Restart kibana
   

@@ -4,7 +4,7 @@
 java_version: 1.8.0
 
 elk_kibana:
-  version: 4.0.2-linux-x64
+  version: 6.2.3-linux-x64
   path: /opt/kibana
   port: 5601
   user: kibana # optional; if unset, kibana does not require authentication
@@ -13,10 +13,10 @@ elk_kibana:
     - 127.0.0.1
 
 elasticsearch:
-  version: 2.x
+  version: 6.x
 
 kibana:
-  version: 4.4
+  version: 6.x
 
 nginx:
   port: 80
@@ -25,4 +25,4 @@ nginx:
   keepalive_timeout: 65
 
 logstash:
-  version: 2.2    
+  version: 6.x 
